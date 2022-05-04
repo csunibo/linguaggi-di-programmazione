@@ -23,7 +23,7 @@ Identificativo | Espressione regolare accettante i nomi dei contenuti
 `esercizi` | `[a-z0-9]+(-[a-z0-9]+)*\.[a-Z]+`
 `libri` | `[a-z0-9]+(-[a-z0-9]+)*\.[a-Z]+`
 `lucidi` | `\d+-[a-z0-9]+(-[a-z0-9]+)*\.[a-Z]+`
-`prove`| `(totale\|(parziale\d?)\|orale\|progetto)-((testo\|soluzione)-)?\d{4}-\d{2}-\d{2}(-[a-z0-9]+)*\.[a-Z]+`
+`prove`| `(scritto\|totale\|(parziale\d?)\|orale\|progetto)-((testo\|soluzione)-)?\d{4}-\d{2}-\d{2}(-[a-z0-9]+)*\.[a-Z]+`
 `varie` | `[a-z0-9]+(-[a-z0-9]+)*\.[a-Z]+`
 
 Non sono ammessi:
