@@ -1,5 +1,5 @@
 name: Lint file names
-on: push
+on: [ push, pull_request ]
 
 jobs:
   check:
