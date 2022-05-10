@@ -5,7 +5,7 @@ Una raccolta di risorse per l'insegnamento di Linguaggi di programmazione
 
 ## Presentazione
 
-[Questo sito](https://csunibo.github.io/linguaggi-di-programmazione-04138)
+[Questo sito](https://csunibo.github.io/linguaggi-di-programmazione)
 elenca staticamente i contenuti della raccolta. Qui, documenti e presentazioni
 con estensione `.md`, `.tex`, `.doc`, `.docx`, `.ppt` o `.pptx` sono
 automaticamente convertiti in formato PDF.
