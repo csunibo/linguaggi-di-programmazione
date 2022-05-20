@@ -21,7 +21,7 @@ e diventa 1. Quando q è distrutto, il contatore di OGG3 è decrementato e diven
 ## Domanda 1
 
 A ciascuna costruzione di oggetto seguono degli inserimenti in coda: OGG1
-inizialmente è [0, 1, 2, 3], OGG2 inizialmente è [100, 200] e 0GG3 inizialmente
+inizialmente è [0, 1, 2, 3], OGG2 inizialmente è [100, 200] e OGG3 inizialmente
 è [10, 20]. L'invocazione alla sottoprocedura aggiorna OGG1 (sostituendo 3
 con 40) e fa sì che h punti invece a OGG3, in cui 10 è sostituito con 30. Quindi
 la stampa produce:
