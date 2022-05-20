@@ -1,4 +1,4 @@
-# Esercizi su tipi di dato
+# Soluzioni degli esercizi sugli oggetti
 
 Maggio 2022
 
@@ -46,7 +46,7 @@ La _vtable_ C contiene puntatori ai codici delle funzioni:
 La prima invocazione di metodo imposta x.b a 15.
 La prima stampa produce 7 (il valore del campo B::a di x).
 La seconda stampa produce 10 (il valore del campo A::a di x).
-La terza stampa produce 10 (il valore del campo B::b di x).
+La terza stampa produce 15 (il valore del campo B::b di x).
 
 # Esercizio 5
 

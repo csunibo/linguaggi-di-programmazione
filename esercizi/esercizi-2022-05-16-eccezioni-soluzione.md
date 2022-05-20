@@ -1,4 +1,4 @@
-# Esercizi su tipi di dato
+# Soluzioni degli esercizi sulle eccezioni
 
 Maggio 2022
 

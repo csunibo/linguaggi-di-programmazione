@@ -1,4 +1,4 @@
-# Esercizi su tipi di dato
+# Soluzioni degli esercizi sulla gestione della memoria
 
 Maggio 2022
 
