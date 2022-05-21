@@ -1,4 +1,4 @@
-# Esercizi su tipi di dato
+# Soluzioni degli esercizi su tipi di dato
 
 Maggio 2022
 
