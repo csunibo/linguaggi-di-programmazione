@@ -99,6 +99,7 @@ offset(2, 3) = 4 * (6 * 2 + 3) = 60
 - `sa = sb`: `Set[B]` non è sottotipo di `Set[A]`;
 - `sb = sa`: `Set[A]` non è sottotipo di `Set[B]`;
 - `sc = sb`: `Set[B]` non è sottotipo di `Set[C]`;
+- `sa.add(sc)`: `Set[C]` non è sottotipo di `A`;
 - `b = sb.add(b)`: `()` non è sottotipo di `B`;
 - `c = sb.remove()`: `B` non è sottotipo di `C`.
 
