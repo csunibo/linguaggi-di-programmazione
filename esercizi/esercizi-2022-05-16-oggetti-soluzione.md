@@ -59,7 +59,6 @@ La tabella che descrive OGG contiene:
 
 - puntatore alla _vtable_ D;
 - `A::x`;
-- `B::x`;
 - `C::x`.
 
 La _vtable_ A contiene puntatori ai codici della funzione:
@@ -73,6 +72,10 @@ La _vtable_ B contiene puntatori ai codici delle funzioni:
 La _vtable_ C contiene puntatori ai codici delle funzioni:
 
 - `f`;
+- `g`.
+
+La _vtable_ D contiene puntatori ai codici delle funzioni:
+
 - `g`.
 
 # Esercizio 7
