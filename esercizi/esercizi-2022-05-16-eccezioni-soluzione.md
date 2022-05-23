@@ -25,7 +25,7 @@ dell'eccezione.
 
 L'eccezione X lanciata non viene catturata dal codice del frammento perche' il
 suo tipo è oscurato dalla eccezione locale omonima. Al più, un gestore
-predefinito potrebbe stamtare un messaggio di descrizione segnalando l'eccezione
+predefinito potrebbe stampare un messaggio di descrizione segnalando l'eccezione
 non gestita.
 
 # Esercizio 5
