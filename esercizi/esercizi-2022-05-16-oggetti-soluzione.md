@@ -76,6 +76,7 @@ La _vtable_ C contiene puntatori ai codici delle funzioni:
 
 La _vtable_ D contiene puntatori ai codici delle funzioni:
 
+- `f`;
 - `g`.
 
 # Esercizio 7
