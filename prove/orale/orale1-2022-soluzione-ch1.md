@@ -70,7 +70,7 @@ Ndr: le domande `evidenziate` sono quelle da sapere per passare l'esame (citando
 
 6.  `Che cos’è un compilatore?`
 
-    > Un compilatore da $L$ a $L_0$ (che indichiamo con $C_{L,L_0}$ è un programma che realizza una funzione $C_{L,L_0} : Prog^L \rarr Prog^{L_0}$ tale che dato in input un programma scritto nel linguaggio $L$ (linguaggio sorgente), produce un programma compilato scritto nel linguaggio $L_0$ (linguaggio oggetto) che potremo eseguire sulla macchina $M_{0_{L_0}}$.
+    > Un compilatore da $L$ a $L_0$ (che indichiamo con $C_{L, L_0}$ è un programma che realizza una funzione $C_{L,L_0} : Prog^L \leftrightarrow Prog^{L_0}$ tale che dato in input un programma scritto nel linguaggio $L$ (linguaggio sorgente), produce un programma compilato scritto nel linguaggio $L_0$ (linguaggio oggetto) che potremo eseguire sulla macchina $M_{0_{L_0}}$.
 
 <br>
 
