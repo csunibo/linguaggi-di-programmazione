@@ -5,11 +5,6 @@ on:
   pull_request:
     branches: main
 
-env:
-  INCLUDE_REGEX: "\\.(pdf|link|txt)$"
-  SOURCE_GLOB: "./**/*.{pdf,link,tex,md,doc,docx,ppt,pptx}"
-  INCLUDE_GLOB: "./**/*.{pdf,link,txt}"
-
 jobs:
   build:
     name: Build pdfs out of tex,md and various doc files
@@ -44,20 +39,24 @@ jobs:
         uses: actions/cache@v2
         id: build-result
         with:
-          path: ${{ env.INCLUDE_GLOB }}
-          key: ${{ hashFiles(env.SOURCE_GLOB) }}
+          path: ./*
+          key: ${{ hashFiles("./*") }}
 
   statik:
     name: Generate the static listing
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Get compiled pdfs
+        uses: actions/download-artifact@v2
+        with:
+          name: -build
       - name: Download cached build output
         uses: actions/cache@v2
         id: build-result
         with:
-          path: ${{ env.INCLUDE_GLOB }}
-          key: ${{ hashFiles(env.SOURCE_GLOB) }}
+          path: ./*
+          key: ${{ hashFiles("./*") }}
 
       - name: Install go
         uses: actions/setup-go@v3
@@ -71,9 +70,10 @@ jobs:
         run: sudo apt install rsync
 
       - name: Generate static directory listing
-        run: $(go env GOPATH)/bin/statik -l -b "https://${{ github.event.repository.owner.name }}.github.io/${{ github.event.repository.name }}/" -i $INCLUDE_REGEX -e "\.git(hub|ignore|keep)?"
+        run: $(go env GOPATH)/bin/statik -l -b "https://${{ github.event.repository.owner.name }}.github.io/${{ github.event.repository.name }}/" -i "\.(pdf|link|txt)$" -e "\.git(hub|ignore|keep)?"
 
       - name: Generate site artifact
+        if: github.ref == 'refs/heads/main'
         uses: actions/upload-artifact@v2
         with:
           name: statik-build
