@@ -40,7 +40,7 @@ jobs:
         id: build-result
         with:
           path: ./*
-          key: ${{ hashFiles("./*") }}
+          key: ${{ hashFiles('./*') }}
 
   statik:
     name: Generate the static listing
@@ -56,7 +56,7 @@ jobs:
         id: build-result
         with:
           path: ./*
-          key: ${{ hashFiles("./*") }}
+          key: ${{ hashFiles('./*') }}
 
       - name: Install go
         uses: actions/setup-go@v3
