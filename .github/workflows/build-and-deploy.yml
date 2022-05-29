@@ -35,28 +35,21 @@ jobs:
       - name: Recursively compile md files
         run: ./.github/workflows/rec "*\.md$" ${GITHUB_WORKSPACE}/.github/workflows/md2pdf
 
-      - name: Cache build output
-        uses: actions/cache@v2
-        id: build-result
+      - name: Generate build artifact
+        uses: actions/upload-artifact@v2
         with:
-          path: ./*
-          key: ${{ hashFiles('./*') }}
+          name: build-result
+          path: .
 
   statik:
     name: Generate the static listing
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@v1
+      - name: Download compiled files
+        uses: actions/download-artifact@v2
         with:
-          fetch-depth: 1
-
-      - name: Download cached build output
-        uses: actions/cache@v2
-        id: build-result
-        with:
-          path: ./*
-          key: ${{ hashFiles('./*') }}
+          name: build-result
 
       - name: Install go
         uses: actions/setup-go@v3
@@ -85,11 +78,17 @@ jobs:
     needs: statik
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/download-artifact@v2
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Download static site artifact
+        uses: actions/download-artifact@v2
         with:
           name: statik-build
+          path: site
 
       - uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           branch: gh-pages
-          folder: .
+          folder: site
