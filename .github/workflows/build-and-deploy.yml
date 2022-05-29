@@ -47,6 +47,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
       - name: Download cached build output
         uses: actions/cache@v2
         id: build-result
