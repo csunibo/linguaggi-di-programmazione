@@ -1,5 +1,5 @@
-# Domande Orale Linguaggi di Programmazione 07-06-2022
-⚠: domanda difficile, per la lode
+# Domande orale Linguaggi di programmazione 07-06-2022
+[!]: domanda difficile, per la lode
 
 [n]: domanda chiesta n volte
 
@@ -9,7 +9,7 @@
   - dal punto di vista dell'efficienza cambia qualcosa?
 - Il tipo `void` cos'è?
   - che insieme di valori denota?
-    > un insieme singoletto
+    > un insieme singoletto (secondo Gabbrielli, non secondo Giallorenzo)
 
 ## Domande modulo 3 (Giallorenzo)
 - Differenza tra manifest e infert typing
@@ -102,7 +102,7 @@
 - Differenza tra `void` e `unit`?
   > `unit` rappresenta un insieme singoletto, restituendo un valore unico; mentre `void` rappresenta un insieme vuoto non restituendo nulla.
 
-- ⚠ Differenza tra sistemi basati su classi e sistemi basati su prototipi
+- [!] Differenza tra sistemi basati su classi e sistemi basati su prototipi
   - dal punto di vista delle garanzie cosa possiamo dare nel caso di uno e nel caso dell'altro?
   - guardando a strongly typed e weakly typed, qual è la relazione?
   - quando un linguaggio è weakly typed? 
@@ -111,10 +111,10 @@
     - qualcosa è da fare comunque in dinamico, si può fare comunque con strongly typed?
     > si può scollegare . . .
     
-- ⚠ Cosa vuol dire scope statico e dinamico, a cosa ci riferiamo? <a id='scope-binding'></a>
+- [!] Cosa vuol dire scope statico e dinamico, a cosa ci riferiamo? <a id='scope-binding'></a>
   - come avviene il binding?
 
-- ⚠ Quali sono i principali valori fondanti dell'object orientation?
+- [!] Quali sono i principali valori fondanti dell'object orientation?
   - per avere un'implementazione quale polimorfismo è il più adatto?
 
 - Differenza tra typed casting e type coertion [3]
