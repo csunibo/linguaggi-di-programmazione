@@ -3,6 +3,10 @@
 
 [n]: domanda chiesta n volte
 
+## Domande modulo 1 (Gorrieri)
+
+(Le stesse della scheda consegnata agli studenti, ma in modo puntiglioso).
+
 ## Domande modulo 2 (Gabbrielli)
 - Esistono linguaggi non tipati, se sì le sembra un'idea ragionevole, se no perchè?
   - che vantaggi ci sono per essere non tipato?
