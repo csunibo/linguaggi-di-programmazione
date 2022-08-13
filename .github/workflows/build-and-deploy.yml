@@ -30,7 +30,7 @@ jobs:
           sudo mv /tmp/pandoc-*/bin/* /usr/bin
 
       - name: Recursively compile tex files
-        run: ./.github/workflows/rec "*\.tex$" "latexmk -pdf"
+        run: ./.github/workflows/rec "*\.tex$" "xelatex -pdf"
 
       - name: Recursively compile (doc|ppt)x? files
         run: ./.github/workflows/rec "*\.(doc|ppt)x?$" "libreoffice --headless --convert-to pdf --outdir ."
