@@ -33,7 +33,7 @@ jobs:
       - name: Install tex
         run: |
           sudo apt update
-          sudo apt install texlive-latex-extra texlive-lang-italian texlive-lang-english texlive-fonts-recommended texlive-bibtex-extra texlive-science latexmk
+          sudo apt install texlive-latex-extra texlive-lang-italian texlive-lang-english texlive-fonts-recommended texlive-bibtex-extra texlive-science texlive-xetex
 
       - name: Install format conversion tools
         run: |
