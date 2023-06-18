@@ -1,0 +1,140 @@
+#1 Esistono linguaggi non tipati, se sì le sembra un’idea ragionevole, se no
+perchè?
+
+#2 che vantaggi ci sono per essere non tipato?
+
+#3 dal punto di vista dell’efficienza cambia qualcosa?
+
+#4 Il tipo void cos’è?
+
+#5 Differenza tra manifest e infert typing
+#6 Pro e contro di infert e manifest typing
+#7 La relazione che c’è tra sottotipaggio ed ereditarietà nell’orientamento ad
+oggetti
+#8 cosa ci permette di sapere il fatto che uno è sottotipo di un altro?
+#9 si vede che c’è una differenza pratica tra sottotipi e ‘sottoclassi’? Se
+non definisce una classe, cosa definisce? > un’interfaccia
+#10 Che differenza c’è tra array unidimensionali e multidimensionali?
+#11 il fatto di avere una row manage o una column manage cosa ci implica?
+#12 qual’è il pro di avere uno rispetto all’altro e perchè?
+#13 è vero dire che questi array non sono staticamente definiti? In che
+modo sono memorizzati?
+ array dinamici
+#14 Il reference types
+#15 Il tipo più generico in java > objects
+#16 tutto quello che viene dopo è più specifico. Dunque quale può essere
+un’implementazione di reference types?
+#17 che differenza c’è tra maybe e option?
+#18 Quali sono i vantaggi e svantaggi del fatto che alcuni linguaggi permettono
+di avere interoperabilità tra gli array e i puntatori? [2]
+1
+#19 svantaggi e vantaggi dell’interoperabilità tra gli array e i puntatori,
+e fare un esempio
+#20 cosa significa che un puntatore diventa dangling?
+#21 se non avessimo l’interoperabilità e avessimo solo gli array, potremmo
+fare un controllo statico? Oppure si possono fare solo controlli dinamici?
+#22 si può dire in maniera statica il risultato di un’operazione?
+#23 Cos’è il garbage e il garbage collection? Quali sono i metodi di implementazione? [4]
+#24 cosa possiamo utilizzare per la detection e la collection?
+#25 è possibile avere dangling pointers con la garbage collection?
+#26 cosa vuol dire avere la garbage collection? Che ruolo ha con i dangling
+reference/dangling pointers?
+ una vera alternativa? Quali sono i pro e i contro con gli altri? >
+reference count
+ che limitazioni ha?
+#27 Quali sono le tecniche di protezione della memoria?
+ qual è uno dei grandi problemi di queste tecniche?
+#28 Differenza tra tipaggio nominale e strutturale. [2]
+ perchè scelgo uno o l’altro?
+ sull’efficienza cosa si intende?
+ riesce a fare un esempio?
+ quali sono i pro e i contro?
+#29 Tipaggio statico e tipaggio dinamico, differenze ed esempi di linguaggi.
+#30 che tipo di linguaggio è JavaScript?
+#31 Cos’è un tipo prodotto e fare un esempio come struttura.
+#32 differenza tra record e array
+#33 cosa serve per essere un record?
+#34 se non avessimo la possibilità di dare dei campi cosa avremmo al
+posto dei record? > tuple
+#35 Polimorfismo, quali sono e le differenze.
+#36 come si chiama la differenza tra il nome del tipo di polimorfismo
+e il polimorfismo vero e proprio? > parametro specificato quando
+istanziamo un tipo specificato
+#37 questa direzione viene sempre mantenuta o cambia per l’utilizzo di
+A e B nei vari contesti? > covarianza-controvarianza
+#38 Cosa vuol dire dal punto di vista concettuale e pratico (del design) il poter
+avere diverse visibilità? > pubblica-privata
+Cosa tengo privato? Perchè?i
+
+#39 Quando un linguaggio è strongly typed e quando è weakly typed e perchè?
+[2]
+ in C alcune cose si “rompono” anche se lo definiamo strongly typed,
+cosa accade?
+#40 Java è strongly typed? perchè?
+ solo a livello statico o ci possono essere più parti? vedi tipaggio
+statico e dinamico
+#41 Cos’è un tipo somma? Cos’è un tipo prodotto? [2]
+– un esempio quale potrebbe essere?
+#42 Cos’è il duck typing e connessione con la structural typing? [2]
+– è riferito a qualcosa di specifico?
+– con le strutture invece?
+– dal punto di vista di espressibilità qual è la loro differenza?
+– il tipaggio strutturale è più o meno specifico?
+– a livello di espressività del linguaggio cosa cambia? > static typing
+– pro e contro > espressività maggiore => rischi > > dinamico vs
+statico
+#43 Differenza tra la definizione intensionale ed estensionale nella definizione
+dei tipi
+#44 un esempio tipico di tipo estensionale > enumerators
+– che differenza hanno gli int dagli enum?
+#45 Differenza tra void e unit? > unit rappresenta un insieme singoletto,
+restituendo un valore unico; mentre void rappresenta un insieme vuoto
+non restituendo nulla.
+#46 ! Differenza tra sistemi basati su classi e sistemi basati su prototipi
+– dal punto di vista delle garanzie cosa possiamo dare nel caso di uno
+e nel caso dell’altro?
+#47 guardando a strongly typed e weakly typed, qual è la relazione?
+#48 quando un linguaggio è weakly typed?
+#49 un esempio di duck typing dove si riesce a spaccare le garanzie dei
+tipi del sistema come in C, con strongly typed.
+∗ Java è strongly typed, però…
+∗ qualcosa è da fare comunque in dinamico, si può fare comunque
+con strongly typed? > si può scollegare . . .
+#50 ! Cosa vuol dire scope statico e dinamico, a cosa ci riferiamo?
+– come avviene il binding?
+#51 ! Quali sono i principali valori fondanti dell’object orientation?
+– per avere un’implementazione quale polimorfismo è il più adatto?
+3
+#52 Differenza tra typed casting e type coertion [3]
+– un esempio
+– perchè non possiamo utilizzare questi costrutti all’interno del polimorfismo generale in Java?
+#53 Cosa sono le eccezioni? A cosa servono?
+– se mettiamo throw e mettiamo la gestione interna?
+– come possiamo definire le nostre eccezioni, come si integrano in Java?
+#54 Differenza tra polimorfismo ad hoc e dynamic dispatch, cosa sono?
+– cosa significa “overloading”?
+#55 dal punto di vista dell’implementazione, come differenziamo i due
+codici tra polimorfismo ad hoc e dynamic dispatch?
+ con che metodo si possono implementare?
+#56 Differenza tra abstract data types e oggetti
+ dal punto di vista implementativo?
+#57 posso farli convivere nello stesso codice? perchè? > no perchè gli
+abstract data types impongono l’implementazione scelta all’inizio, invece gli oggetti possono essere sovrascritti ereditati etc …
+#58 Differenza tra ereditarietà singola ed ereditarietà multipla
+– Alcuni metodi per risolvere le
+#59 Come i tipi possono aiutare la programmazione?
+#60 Cos’è il doc vector e qual è il suo utilizzo?
+– dove viene allocato il suo contenuto?
+• Se le funzioni nei linguaggi fossero come le funzioni matematiche, come
+potremmo ottimizzarne la loro esecuzione?
+– come si scriverebbe?
+– un esempio > var globale lo chiamo una volta la incremento, la ritorno
+etc …
+– che ottimizzazioni possiamo fare con le funzioni matematiche? > di
+memoria: una tabella, per salvare i valori e lo riporto.
+#61 Gestione degli errori nelle varie modalità (result types) e altre modalità
+#62 cosa abbiamo dal punto di vista pratico con il result type?
+#63 un’altra possibilità che possiamo chiedere al chiamante di darci per
+capire meglio cos’è? > il tipo result
+#64 Cosa sono i dangling pointers e le dangling reference?
+#65 quando abbiamo i wide pointers/referenc

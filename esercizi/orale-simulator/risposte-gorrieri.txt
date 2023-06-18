@@ -1,0 +1,606 @@
+#1 
+
+una macchina astratta
+non è altro che un'astrazione del concetto di calcolatore fisico.
+
+Supponiamo che sia dato un linguaggio di
+programmazione L. Definiamo una macchina astratta per, L, e la indichiamo
+con Ml, un qualsiasi insieme di strutture dati e di algoritmi che pennettano
+di memorizzare ed eseguire programmi scritti in L.
+
+Una macchina astratta Ml e' per definizione un dispositivo che permette di eseguire programmi scritti in L.
+
+Una macchina astratta corrisponde
+dunque univocamente ad un linguaggio, il suo linguaggio macchina. Inversamen-
+te, dato un linguaggio di programmazione L, vi sono molte (infinite) macchine
+astratte che hanno L come proprio linguaggio macchina.
+
+#2 Un interprete per il linguaggio L, scritto in L0, e' un programma che realizza una funzione parziale. I(L0->L) : Prog x D -> D
+
+#3 Data una macchina astratta Ml, il linugaggio L "compreso" dall'interprete Ml e' detto linguaggio macchina di Ml.
+
+#4 Si. Data una macchina astratta essa avra' un solo linguaggio macchina, Dato un linguaggio L ci sono infinite macchine astratte ad avere quel linugaggio L. 
+
+#5 
+
+Le tecniche per implementare una macchina astratta sono: 
+
+- Implementarla direttamente a livello hardware (progettazione complessa)
+
+- Implementazione interpretativa pura:
+  realizzata dalla simulazione dei costrutti Ml mediante programmi scritti in L0  
+  Nell'implementazione interpretativa pura di L, dunque, non vi è una traduzione esplicita dei programmi scritti in L. Vi è solo un procedimento di "decodifica":
+  l'interprete I scritto in L0 relativo al linguaggio L , per eseguire un'istruzione del linguaggio L, le fa corrispondere in un certo insieme di istruzioni di L0. Tale decodifica non è una traduzione esplicita perché il codice corrispondente ad un'istruzione di L, viene eseguito, non prodotto in uscita dall'interprete.
+
+- implementazione compilativa pura:
+  traduzinoe esplicita dei programmi di L in corrispondenti programmi di L0
+  Nell'implementazione compilativa pura l' implementazione di L avviene traducendo esplicitamente i programmi scritti in L in programmi scotti in L0. La traduzione è eseguita da un opportuno programma, detto compilatore
+
+il linguaggio L in questo caso e' detto linguaggio sorgente
+il linguaggio L0 e' detto linguaggio oggetto.
+
+La compilazione produce come risultato un programma che potremo eseguire successivamente, quando vorremo.
+
+#6 
+Un compilatore da L a L0 e' un programma che realizza una funzione
+
+C(l,l0) : progL -> progL0
+
+#7 
+
+- Implementazione interpretativa pura:
+  realizzata dalla simulazione dei costrutti Ml mediante programmi scritti in L0 
+  Nell'implementazione interpretativa pura di L, dunque, non vi è una traduzione esplicita dei programmi scritti in L. Vi è solo un procedimento di "decodifica":
+  l'interprete I scritto in L0 relativo al linguaggio L , per eseguire un'istruzione del linguaggio L, le fa corrispondere in un certo insieme di istruzioni di L0. Tale decodifica non è una traduzione esplicita perché il codice corrispondente ad un'istruzione di L, viene eseguito, non prodotto in uscita dall'interprete.
+
+- implementazione compilativa pura:
+  traduzinoe esplicita dei programmi di L in corrispondenti programmi di L0
+  Nell'implementazione compilativa pura l' implementazione di L avviene traducendo esplicitamente i programmi scritti in L in programmi scotti in L0. La traduzione è eseguita da un opportuno programma, detto compilatore
+
+il linguaggio L in questo caso e' detto linguaggio sorgente
+il linguaggio L0 e' detto linguaggio oggetto.
+
+La compilazione produce come risultato un programma che potremo eseguire successivamente, quando vorremo.
+
+#8 
+Un interprete può considerarsi corretto quando riesce ad eseguire il codice sorgente senza errori, rispettando correttamente la semantica del linguaggio di programmazione e restituendo i risultati attesi. In altre parole, un interprete è corretto quando riesce a interpretare correttamente e coerentemente il codice sorgente, senza violare le regole del linguaggio di programmazione.
+
+Allo stesso modo, un compilatore può dirsi corretto quando traduce il codice sorgente in codice macchina (o in un'altra forma eseguibile) senza errori, rispettando la semantica del linguaggio di programmazione e producendo un'eseguibile che si comporta come previsto. Un compilatore corretto deve effettuare le trasformazioni richieste dal linguaggio di programmazione in modo accurato e coerente, senza introdurre bug o comportamenti imprevisti.
+
+#9
+Per quanto riguarda l'implementazione interpretativa pura lo svantaggio prin-
+cipale risiede nella sua scarsa efficienza. Difatti, dato che non vi è una fase preliminare di traduzione, per eseguire il programma pc l'interprete deve effet-
+tuare al momento dell'esecuzione una decodifica dei costrutti del linfuaggio C.
+A1 tempi di esecuzione intrinsecamente richiesti dalle operazioni di 'P si devoo
+sommare quindi anche i tempi necessari alla decodifica.
+
+Uno degli svantaggi maggiori dell'approccio compilativo risiede nella perdita dì informazioni riguardo alla struttura del progranuna sorgente, perdita che rende più difficile l'interazione con il programma a tempo di esecuzione. Ad esempio, se a run-time si verificasse un errore potrebbe essere difficile determinare qual è 11 comando del programma sorgente che lo ha determinato
+
+#10
+Per quanto riguarda l'implementazione interpretativa, osserviamo subito che ogni interprete ''reale'' lavora su una rappresentazione interna dei programmi che non coincide quasi mai con la rappresentazione esterna dei programmi stessi. Il passaggio dalla notazione esterna alla rappresentazione interna si configura come una vera e propria traduzione (compilazione,
+nella nostra terminologia) da L ad un linguaggio intermedio, che è quello in-
+terpretato. Analogamente, in ogni implementazione compilativa alcuni costrutti
+particolarmente complicati sono simulati. Ad esempio, alcune istruzioni di in-
+gresso/uscita per essere tradotte nel linguaggio della macchina hardware richiederebbero varie centinaia di istruzioni
+
+Supponiamo, come in precedenza, di avere un linguaggio L che deve essere implementato e di disporre di una macchina ospite M0L0 già realizzata. Fra la macchina ML che vogliamo realizzare e la macchina ospite esiste un ulteriore livello caratterizzato da un proprio linguaggio Li e dalla relativa macchina astratta MiLi, che chiameremo rispettivamente linguaggio intermedio e macchina intermedia. Abbiamo sia un compilatore da C(L,Li) che traduce da L a Li. Sia un interprete I(L0,Li) che gira sulla macchina M0L0 e che simula la macchina MiLi.
+
+# 11
+
+- Se l'interprete della macchina intermedia e' sostanzialmente diverso dall'interprete di M0L0, diremo che siamo in presenza di un'implementazione di tipo interpretativo
+(JAVA JVM)
+
+- Se l'interprete della macchina intermedia e' sostanzialmente uguale all'interprete di MOLO. diremo che siamo in presenza di un'implementazione di tipo compilativo.
+(C)
+
+
+#12
+
+Si possono realizzare qualora i linguaggi siano almeno ugualmente espressivi. In generale sempre nel caso siano Turing completi.
+
+#13
+#14
+#15 
+
+-Grammatica
+  -Analisi lessicale 
+  -Analisi Sinattica
+-Semantica -> attribuire un significato ad ogni frase corretta
+-Pragmatica -> come usare una frase corretta
+-Implementazione -> come le frasi "operative" sono implementate
+
+#16
+L'aspetto lessicale e' il modo di costruire token a partire da caratteri dell'alfabeto
+L'aspetto sintattico invece e' il modo di costruire "frasi" legali a partire dai token.
+
+#17
+-Un alfabeto e' un insieme finito di simboli
+-Una parola o stringa e' una sequenza corretta di simboli appartenenti all'alfabeto
+-A* che indica la chiusura di Kleene sull'alfabeto A. e' numerabile
+
+#18
+
+#19 
+Una grammatica libera da contesto e' una quadrupla (NT, T, R, S)
+fissata una grammatica G, e assegnate due stringhe v, w su {T U NT},
+diciamo cche da v si deriva immediatamente w (v => w), se w si ottiene da v sosrituendo ad un non terminale V in v il corpo di una produzione la cui testa sia V.
+Il linguaggio generato da una grammatica libera G e' l'insieme
+L[G] = {w \in T* | S => *w}
+
+#20
+
+Data una grammatica libera G = {NT, T, R, S} un albero di derivazione o albero di parsing e' un albero ordinato in cui 
+- ogni nodo e' etichettato con un simbolo in {NT U T U eps}
+- la radice e' etichettata con S
+- ogni nodo interno e' etichettato conun simbolo \in NT
+- L'insieme delle etichette dei figli di un nodo e' l'insieme delle produzioni possibili a partire da quel nodo. 
+
+Una derivazione si dice sinistra/destra se ad ogni passo viene riscritto il non terminale piu' a sinistra/destra della stringa.
+
+#21
+
+Una grammatica e' ambigua se e solo se esiste una stringa v \in L[G] che ammette due o piu' derivazioni sinistre/destre dal simbolo iniziale. Ad esempio la grammatica delle espressioni. Un linguaggio e' ambiguo quando tutte le grammatice che lo generano sono ambigue.
+
+#22
+Si decidendo precedenze delle derivazioni e manipolando la grammatica opportunamente. In base alla notazionie utilizzata potrebbe dover essere necessario un uso estensivo delle parentesi. 
+
+#23
+L'alber di sintassi astratta e' un albero di derivazione che soddisfa i vincoli contestuali di un linguaggio in cui compaiono solo i terminali.\
+La sintassi astratta di un linguaggio e' composta da tutti gli alberi di derivazione che soddisfano anche i vincoli contestuali del linuaggio.
+Per zucchero sintattico si intendono simboli atti solo a chiarire la dericazion e di una stringa. 
+
+#24
+
+- il numero e il tipo dei parametri attuali di una chiamata di procedura deve essere uguale a quello dei parametri formali della dichiarazione
+- un identificativo dev'essere dichiarato prima dell'uso
+-prima di usare una variabile dev'esservi statu un assegnamento su di essa.
+
+#25
+
+Con sintassi non contestuale si intende descrivibile con una grammatica libera
+Per semantica statica si intende (detta anche sintassi contestuale) descrivibile con vincoli contestuali verificabili staticamente all'interno del testo del programma.
+Per semantica dinamica si intende quei vincoli che sono verificambiili solo al momento dell'esecuzione dinamica del programma.
+
+#26
+
+-Analisi lessicale: 
+  Scopo dell'analisi lessicale e' quello di leggere sequenzialmente simboli di ingrasso in cui e' composto il programma e di raggruppare tali simboli in unita' logicamente significative chiamate token. Nessun controllo e' ancora fatto sulla sequenza di token (ad esempio il bilanciamento delle parentesi)
+
+- Analisi sintattica (Parsing): 
+  Costruita la lista di token il parser cerca di costruire un albero di derivazione per tale lista. Ogni foglia di tale albero e' costituita da un token contenuto nella lista e leggendo da sinistra a destra dell'albero si deve ottentere una frase legale del linguaggio.  Puo' accadere che il parser non sia in grado di costruire l'albero. In quel caso la stringa in ingresso non e' una stringa corretta secondo la grammatica del linguaggio. 
+ 
+- Analisi semantica
+  L'albero di derivazione viene sottoposto a controlli relativi ai vincoli contestuali. Via via che questi controlli vengono effettuati, l'albero di derivazione viene aumentato con la relativa informazione (tipo, luogo della dichiarazione...)
+
+- Generazione forma intermedia: 
+Visitando l-albero viene generato un codice intermedio che e' sia indipendente dal architettura che dal sorgente
+
+- Ottimizzazione forma intermedia
+rimozione di codice inutile, espansioni in-line di chiamate di funzione
+fattorizzzazione di sottoespressioni per non calcolare piu' volta lo stesso valore
+mette fuori dai cicli le sottoespressioni che non variano.
+
+- Generazione del codice: 
+Viene generato codice oggetto per una specifica architettura (include assegnazione dei registri e ottimizzazioni specifiche per l'architettura e il codice oggetto)
+
+#27
+#28
+
+I metodo formali per la semantica si dividono in due grandi famiglie:
+
+-Semantiche denotazionali
+E' l'applicazione ai linguaggi di programmazione di tecniche sviluppate per la semantica del linguaggio logico-matematico. Il significato di un programma e' dato da una funzione, che esprime il comportamento input/output del programma stesso. 
+
+- Semantiche operazionali
+Nell'approccio operazionale, invece, non vi sono entita' esterne (es. funzioni) da assoviare ai costrutti del linguaggio. Una semantica operazionale specifica il comportamento della macchina astratta, ossia ne definisce l'interprete, facendo riferimento ad un formalismo di piu' basso livello
+
+#29
+
+#30
+Per pragmatica si intende il modo corretto di utilizzare un costrutto corretto. E' evidente dunque, che la pragmatica non viene stabilita una volta per tutte al momento della definizione del linugaggio. Al contrario essa evolve assieme all'uso che del linguaggio viene fatto. 
+
+#31
+
+Scopo dell'analizzatore lessicale e' quello di riconoscere nella stringa in ingresso alcuni gruppi di caratteri che corrispondono a certe categorie sintattiche. In tal modo la stringa in ingresso e' trasformata in una sequenza di simboli astratti, detti token, che osno passati all'analizzatore sintattico.
+
+#32 
+Un token e' un informazione astratta che rappresenta una string del testo in ingresso. E' una coppia (nome, valore): il nome del token e' un simbolo astratto che rappresenta una categoria sintattica, il valore invece e' costituito da una sequenza di simboil del testo in ingresso. 
+
+#33
+Le sequenze di caratteri associati ad un token sono specificate mediante pattern, cioe' una descrizione della forma che le sequenze di caratteri possono assumere. Questa descrizione e' data mediante espressioni regolari. 
+Una stringa dell'alfabero che corrisponde ad un pattern si dice lessema.
+
+#34
+
+#35
+Un linguaggio L e' regolare sse L e' vuoto oppure esiste un espressione regolare s | L = L[s]
+I linguaggi finiti sono tutti regolari. Esistono linguaggi infiniti che sono regolari. 
+
+#36
+Due espressioni regolari sono equivalenti se generano lo stesso linguaggio 
+
+#37
+E' una lista di definizioni di simboli a cui ad ogni simbolo e' associato un espressione regolare. E' utile per esprimere espressioni regolari complesse, li si divide in sottoespressioni in cui a ognuna e' associato un simbolo. 
+
+#38
+
+#39
+Il linguaggio accettato da da un NFA N e' l'insieme L[N] = {x \in sigma* | N accetta x}
+
+#40
+
+#41
+
+#42
+
+#43
+per induzione...
+
+#44
+
+Una grammatica libera e' regolare sse ogni produzione e' della forma
+V -> aW oppure V -> a
+dove V, W \in NT, a \in T
+Per il simbolo iniziale e' ammessa anche S -> eps
+
+#45
+O passando attraverso un'espressione regolare oppure usando le regole di produzione della grammatica per rappresentare gli stati aggiungendo uno stato eps finale. 
+
+#46 
+
+Sia M = (Sigma, Q, delta, q0, F) il DFA 
+la grammatica Gm = (Q, sigma, R, q0) ha:
+
+come non terminali gli stati di M 
+come terminali l'alfabeto di M
+come simbolo iniziale q0
+come produzioni R tutte le possibili transizioni di M
+
+#43 
+Si deve creare un'espressione regolare che riconosca il linguaggio generato dalla grammatica. 
+
+#48 
+
+#49 
+Due stati sono equivalenti se non sono distinguibili. 
+Una stringa x distingue due stati q0 q1 se il cammino che parte in q0 e consuma c arriva a uno stato finale e il cammino che parte in q1 no. Oppure viceversa.
+
+#50
+Si crea una tabella con tutte le coppie di stati
+Si marca ogni coppia finale-non finale
+Scorri tutte le coppie non marcate e prova tutte le mosse possibili e se almeno una porta la coppia di stati su una coppia gia marcata marca anche questa
+
+#51
+si fondono insieme gli stati equivalenti
+
+#52
+Lex e' un software per l'analisi lessicale. Il suo input e' un file.l e il suo output e' un file.c che implementa uno scanner. 
+
+#53
+E' diviso in 
+dichiarazioni: es cifra [0-9]
+%
+regole: es {pattern} {azione}
+%
+funzioi ausiliarie:
+se si usano funzioni complesse nella parte azione
+
+
+#54
+lex e' una subroutine per yacc, ci sono alcune variabili comuni ai due programmi per scambiarsi informaioni (il valore del token), yacc e' usato per ottenere il token successivo al bisogno. 
+
+#55
+su carta 
+
+#56
+su carta
+
+#57
+i linguaggi regolari sono chiusi rispetto 
+ 
+ per mezzo delle espressioni regolari dimostro
+- unione
+- concat 
+- kleene
+- intersezione (ho complemento e unione => de Morgan inters)
+- complemento (inverto terminali con non terminali)
+
+#58
+
+L'analisi sintattica descrive quali sequenze di token constituiscono frasi legali.
+Un parser e' riconoscitore di linguaggio libero detto anche analizzatore sintattico. Si tratta dunque di un programma, in genere basato su PDA per il linguaggio riconosciuto, che usa l'input per decidere le produzioni da utilizzare e costruire un albero di derivazione se esiste. 
+
+#59
+su carta
+
+#60 
+non sono equivalenti dato lo stesso PDA, pero' si puo' dimostrare che se un automa riconosce per pila vuota se ne puo costruire uno che riconosce per stato finale e viceversa
+
+#61
+su carta, si e' sempre possibile 
+
+#62
+-unione
+-concat
+-kleene
+
+-no complemento
+-no inters
+
+L'intersezione di un linguaggio libero con uno regolare non e' libero
+dim su carta
+
+#63
+su carta
+
+#64
+per absurd
+
+#65
+- Grammatiche illimitate -> macchina di turing
+- Grammatiche dipendenti dal contesto -> automa limitato linearmente
+- Grammatiche libere da contesto -> PDA
+- Grammatiche libere deterministiche -> DPDA
+- Grammatiche regolari -> DFA/NFA
+
+#66
+su carta
+Un linguaggio e' libero deterministico se e' accettato da un automa a pila deterministico per stato finale
+
+#67 
+Si, Si include strettamente i linguaggi regolari. Posso infatti costruire un DPDA che si comporta come un DFA, semplicemente non utilizzo la pila. 
+
+#68 
+Non esiste x,y \in L t.c x e' prefisso di y
+Se un linguaggio gode della prefix property allora puo' essere accettato da un DPDA
+
+#69
+Si, basta distinguare ogni parola con l'endmarker $ in modo che il DPDA sappia rilevare i prefissi. Quando siamo in uno stato finale e leggiamo l'endmarker e non ci sono piu' simboli in input possiamo svuotare la pila e accettare.
+
+#70
+No un linguaggo libero deterministico non e' mai ambiguo
+ 
+#71
+Non sono chiusi per intersezione infatti 
+L1 = {a^n b^m c^m}
+L2 = {a^n b^n c^m}
+L1 n L2 => L3 = {a^n b^n c^n} dipendente da contesto
+
+Non sono chiusi per complementazione allora per de morgan non possono essere chiusi rispetto all'unione
+
+#72
+Si parte da una grammatica libera
+
+#73
+Un parser prende in input una sequenza formata di token e produce in output un albero di derivazione se la sequenza in input appartiene al linguaggio. 
+
+#74
+Un parser non deterministico davanti a una scelta tenta le diverse possibili opzioni e se una scelta e' inproduttiva => backtracking
+parser deterministico legge l'input una sola volta, ogni decisione e' definitiva
+
+#75 
+Le tecniche Bottom up e Top Down
+
+#76
+I parser Top down ricostruiscono una derivazione leftmost per w in input a partire dal simbolo iniziale S (All'inizio sulla pila)
+I parser bottom-up ricostruiscono una derivazione rightmost (a rovescio) a partire dalla stringa w, cercando di ridurla al simbolo iniziale S (alla fine sulla pila)
+
+#77 
+Non sono adatte al top-down parsing le grammatiche che presentano ricorsione sinistra o sono ambigue.
+Invece non sono adatte al bottom-up parsing solamente le grammatiche ambigue.
+
+#78 
+Le produzion eps sono le produzioni del tipo A -> eps
+Un simbolo A \in NT e' annullabile se A non e' un generatore. (?)
+
+
+#79 
+
+Costruiamo una nuova grammatica G’ che ha come produzioni R’ tutte le possibili produzioni le produzioni in cui epsilon non c'e' piu' , dove compare un NT che lo generava mettiamo sia la produzione in cui compare sia una nuova produzione in cui lo omettiamo.
+
+#80 
+
+Una produzione unitaria e' una produzione della forma A -> B dove B \in NT
+Una coppia unitaria se A ->* B (?)
+
+
+
+
+
+#81 
+
+costruiamo una nuova grammatica in cui al posto della produzione unitaria A->B mettiamo direttamente le derivazioni di B al posto di B
+
+#82
+
+- I simboli utili sono i simboli che vengono generati e raggiunti
+- X \in NT e' generatore sse esiste w \in T | X =>* w
+- X \in T U NTe' raggiungibile sse S =>* aXb per qualche a,b \in (T U NT)*
+
+#83
+
+prima si scive in un insieme T tutti i simboli terminali
+Successivamente si crea un insieme w1 contenente tutti i simboli NT t.c. possono derivare i simboli terminali dell'insieme T. Successivamente si crea un inieme w2 dove si aggiungono a w1 tutti i simboli NT che possono generare i simboli di w2. Ci fermiamo quando w[n] = w[n-1]
+Per trovare i simboli raggiungibili si crea un insieme w1 che contiene solo il simbolo di partenza S, successivamente si creano gli insiemi y2, y3 ... in cui ad ogni passo aggiungiamo i simboli che riusciamo a raggiungere attraverso le possibili produzioni dei simbolu in y{}. ci fermiamo qunado y[n] = y[n-1]
+
+
+#84
+
+Prima vanno elimiati i non generatori, poi i simboli inutili. E' importante l'ordine
+
+#85
+
+Una grammatica e' ricorsiva sinistra quando sono presenti produzioni della forma A => Aa con A \in NT e a \in T
+
+la ricorsioni immediata si elimina nel seguente modo 
+
+A => Aa | a
+
+creo un nuovo simbolo A' t.c.
+
+A = aA'
+A'= aA' | a
+
+La ricorsione non immediata va resa immediata mediante opportune sostituzioni
+
+#86
+
+Fattorizzare una grammatica significa cambiare le produzioni in modo da raccogliere la parte comune iniziale tra esse 
+
+Fattorizzare una grammatica è importante perché se in più produzioni i primi k simboli sono uguali, allora un parser left-to-right con solo k simboli di look-ahead non potrebbe scegliere che produzione utilizzare e necessiterebbe di k+1 simboli di look-ahead. Fattorizzare serve a poter ridurre il numero di simboli di look-ahead.
+
+#87
+
+Un parser a discesa ricorsiva e' un tipo di parser top-down in cui partendo dal simbolo iniziale si provano ricorsivamente le produzioni per arrivare a mathcare la stringa di input w
+
+#88
+
+il first(a) con a \in NT e' il primo terminale che si puo' derivare dalle derivazioni di a
+
+il follow(a) e' il primo terminale che puo' comparire in una produzione dopo a
+
+#89
+te lo dico a voce male
+
+#90
+E' una tabella in cui le righe sono indicizzate per i non terminali e le colonne osno indicizzate sui T U {$}
+
+Nella casella M[A, a] sono contenute le produzioni che dal simbolo A si possono compiere per ottenere a
+
+#91 
+
+Una grammatica si dice di classe LL(1) se la tabella di parsing contiene in ogni cella al piu' una produzione
+Questo succede sse nella grammatica G per ogni coppia di produzioni con la stessa testa: A -> a | b si ha
+first(a) n first(b) = emptySet
+
+se eps \in first(a) => first(b) n follow(A) = emptySet
+se eps \in first(b) => first(a) n follow(A) = emptySet
+
+#92
+La prima L sta per Left ro right ed e' l'ordine di lettura dell'input
+La seconda L sta per Left derivation
+
+#93
+Il meccanismo della pila è in realtà implicito nella ricorsione.
+Inizialmente si fa push del simbolo iniziale.
+Poi finchè la pila non è vuota si toglie un elemento da questa, se è un terminale allora si
+cerca di fare match con il primo simbolo in cima alla pila altrimenti se è un non terminale lo si
+espande.
+
+
+#94
+Si. Se L e' regoalere allora esistre un DFA M t.c. L = L[M],
+a partire da M costruiamo una grammatica G.
+Questa grammatica e' LL(1) perche' costruita da un M deterministico e quindi per ogni simobolo a \in sigma ci sara' una sola produzione che inizia per a. Non si creera' dunque nessun conflitto nel riempimento della tabella a scala.
+
+#95
+Gli insieme generalizzano first e follow e contengono stringhe al piu' lunghe k
+
+#96
+Una grammatica e' LL(k) quando ogni casella della tabella di parsing LL(1) contiene al piu' una produzione. 
+Un linguaggio e' LL(k) se esiste una G di classe LL(k) t.c. L[G] = L
+
+#97
+Se una grammatica e' ambigua sicuramente non e' LL(k) per nessun k
+Se una grammatica e' ricorsiva sinistra non e' LL(k) per nessun k
+
+#98
+Si per entrambe.
+Nel caso dei linguaggi liberi det
+
+Prendendo ad esemio 
+L = {a^i b^j | i >= j} e' libero determistico
+
+Una sua possibile grammatica libera e' 
+
+S -> aS | B
+B -> aBb | eps
+
+come faccio a scegliere tra S ->aS o S -> B
+dovrei leggere fino in fondo all'input usando k lookahead ma per quanto lo posso scegliere grande ci sara' sempre una stringa piu' lunga di k 
+
+#99
+I parser bottom-up sono PDA che alternano tra le seguenti 2 azioni
+-shift -> un simbolo terminale e' spostato dall'input sulla cima della pila
+-reduce -> un insieme di simboli sulla cima della pila sono corrispondenti ad una parte destra di una produzione, vengono eliminati e al suo posto viene messo sulla pila il simbolo non terminale della produzione
+
+Prendono in input una grammatica e un stringa, producono un albero di derivazione destro se4 la stringa appartiene alla grammatica altrimenti 
+
+#100
+Quando si presenta un conflitto di tipo shift/reduce o reduce/reduce partendo da un parser LR0 si puo' costruire un parser SLR1 in cui semplicemente si va a guardare il follow del non terminale che genera il conflitto. Se il follow e' uguale al terminale sui cui il conflitto e' presente allora il conflitto e' reale. 
+
+#101
+Un prefisso viabile e' una stringa sulla pila che e' la parte destra di una qualche produzione della grammatica. 
+
+#102
+Un item LR0 per una grammatica G e' una sua produzione in cui e' indicata esplicitamente una posizione nella sua parte destra con un punto (il punto indica quanta parte della produzione e' gia' stata analizzata). Se l'item ha il punto in fondo alla produzione allora indica la presenza di una maniglia sulla pila.
+Gli item di una grammatica si generano creando un item per ogni posizione di ogni produzione della grammatica. 
+
+#103
+L'NFA dei prefissi viabili e' costruito come segue: (modo diretto) 
+aumentiamo la grammatica con un nuovo simbolo inziale S'
+[S' -> . S] e' lo stato iniziale
+per ogni Item presente faccio la clos()
+ottengo ad esempio 
+[S' -> . S]
+[S -> . aA]
+[S -> . bB]
+per ogni possibile Item faccio un goto()
+mi trovo in un nuovo stato se ho . NT
+faccio la clos di quel NT
+
+
+#104
+dai bona 
+
+#105
+bona
+
+#106
+Se G ha produzioni eps difficilmente e' LR0
+Se L e' libero deterministico e gode della prefix property 
+allora L e' LR0
+
+#107
+
+#108
+
+#109
+
+#110
+
+#111
+
+#113
+
+#114
+
+#115
+
+#116
+
+#117
+
+#118
+
+#119
+
+#120
+
+#121
+
+#122
+
+#123
+
+#124
+
+#125
+
+#126
+
+#127
+
+#128
+
+
