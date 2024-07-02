@@ -108,7 +108,7 @@ trovate errori segnalateli o meglio correggeteli direttamente_ :)
   $(024, "aS", "b$")$ \
   $(0245, "aSb", "$")$ \
   $(01, "S", "$")$ Accept!
-  \\
+  \ \
   $(0, epsilon, "$")$  Errore, cella bianca
 
 + Direi che il testo è sbagliato e il passaggio dei paramentri è per nome e per
