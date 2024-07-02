@@ -87,17 +87,17 @@ trovate errori segnalateli o meglio correggeteli direttamente_ :)
 
   Costruiamo la tabella $\LR(0)$:
   #table(
-    columns: (1fr, 1fr, 1fr, 1fr),
+    columns: (1fr, 1fr, 1fr, 1fr, 1fr),
     align: center,
     table.header(
-      [*a*], [*b*], [*\$*], [*S*]
+      [], [*a*], [*b*], [*\$*], [*S*]
     ),
-    $0$, [S2], [], [G1],
-    $1$, [], [Acc], [],
-    $2$, [S2], [S3], [G4],
-    $3$, [R1], [R1], [R1],
-    $4$, [], [S5], [],
-    $5$, [R2], [R2], [R2],
+    $0$, [S2], [], [], [G1],
+    $1$, [], [], [Acc], [],
+    $2$, [S2], [S3], [], [G4],
+    $3$, [R1], [R1], [R1], [],
+    $4$, [], [S5], [], [],
+    $5$, [R2], [R2], [R2], [],
   )
   Non ci sono conflitti, quindi la grammatica è $\LR(0)$. Discutiamo il 
   comportamento del parser sugli input: \
