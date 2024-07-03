@@ -3,7 +3,7 @@
 
 #set align(center)
 = Soluzione Linguaggi Totale 
-==== 2024-06-04
+==== 2024-02-06
 
 #set align(left)
 #set par(
